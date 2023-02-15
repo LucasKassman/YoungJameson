@@ -95,7 +95,7 @@ client.on('message', msg => {
 
   // Reply to a user who mentions the bot
 client.on('messageCreate', message => {
-    console.log(`I see a message!`);
+   // console.log(`I see a message!`);
     if (message.author.id == ('672582224020897793')&&message.content.toLowerCase().includes('vaporeon')){
         if (message.content.toLowerCase().includes('vaporeon')){
             message.channel.send('Sorry Charlotte, Lucas said I dont get to talk to you :(');
