@@ -5,11 +5,12 @@ module.exports = {
 	data: new SlashCommandBuilder().setName("looptrack").setDescription("I'll just loop the current song"),
 	run: async ({ client, interaction }) => {
 		const queue = client.player.getQueue(interaction.guildId)
-		currentPlaying = client.player.current
+		//currentPlaying = client.player.current
+
 		if (!queue) return await interaction.editReply("There are no songs in the queue")
+		
 		const song = queue.current
-		queue.
-			queue.setRepeatMode(1)
+		queue.setRepeatMode(1)
 			await interaction.editReply({
 				embeds: [new EmbedBuilder()
 					.setThumbnail(song.thumbnail)
