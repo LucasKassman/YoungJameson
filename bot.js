@@ -1,7 +1,7 @@
 // Run dotenv
 require('dotenv').config();
 const Discord = require('discord.js');
-
+const { VoiceConnectionStatus } = require('@discordjs/voice');
 const { REST } = require("@discordjs/rest")
 const { Routes } = require("discord-api-types/v10")
 const { Client, GatewayIntentBits, SlashCommandAssertions } = require('discord.js');
@@ -26,6 +26,15 @@ const client = new Client({
         quality: "highestaudio",
         highWaterMark: 1 << 25
     }
+    
+});
+client.player.on('connectionCreate', (queue) => {
+    console.log("setup queue");
+    queue.connection.voiceConnection.on('stateChange', (oldState, newState) => {
+        if (oldState.status === VoiceConnectionStatus.Ready && newState.status === VoiceConnectionStatus.Connecting) {
+            queue.connection.voiceConnection.configureNetworking();
+        }
+    })
 });
 let commands = []
 const slashFiles = fs.readdirSync("./slash").filter(file => file.endsWith(".js"))
