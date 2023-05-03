@@ -1,5 +1,6 @@
 // Run dotenv
 require('dotenv').config();
+
 const Discord = require('discord.js');
 const { VoiceConnectionStatus } = require('@discordjs/voice');
 const { REST } = require("@discordjs/rest")
@@ -8,9 +9,11 @@ const { Client, GatewayIntentBits, SlashCommandAssertions } = require('discord.j
 const fs = require("fs")
 const {Player } = require("discord-player")
 const LOAD_SLASH = process.argv[2] == "load"
-const CLIENT_ID = CLIENT_ID.txt
-const GUILD_ID = GUILD_ID.txt
-const GUILD_ID_DND = GUILD_ID_DND.txt
+const {GUILD_ID } = require('./constants')
+const {GUILD_ID_DND } = require('./constants')
+const {CLIENT_ID } = require('./constants')
+
+
 const TOKEN = process.env.DISCORD_TOKEN
 
 const client = new Client({
@@ -108,3 +111,10 @@ client.on('messageCreate', message => {
   
 });
 
+function fileRead(fileName){
+    fs.readFile(filename, (err, data) => {
+        if (err) throw err;
+      
+       return data.toString
+      });
+}
