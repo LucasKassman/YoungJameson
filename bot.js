@@ -8,9 +8,9 @@ const { Client, GatewayIntentBits, SlashCommandAssertions } = require('discord.j
 const fs = require("fs")
 const {Player } = require("discord-player")
 const LOAD_SLASH = process.argv[2] == "load"
-const CLIENT_ID = "1048774145720201268"
-const GUILD_ID = "752361739051597946"
-const GUILD_ID_DND = "907009675088777318"
+const CLIENT_ID = CLIENT_ID.txt
+const GUILD_ID = GUILD_ID.txt
+const GUILD_ID_DND = GUILD_ID_DND.txt
 const TOKEN = process.env.DISCORD_TOKEN
 
 const client = new Client({
