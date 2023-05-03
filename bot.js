@@ -105,28 +105,6 @@ client.on('message', msg => {
   // Reply to a user who mentions the bot
 client.on('messageCreate', message => {
    // console.log(`I see a message!`);
-    if (message.author.id == ('672582224020897793')&&message.content.toLowerCase().includes('vaporeon')){
-        if (message.content.toLowerCase().includes('vaporeon')){
-            message.channel.send('Sorry Charlotte, Lucas said I dont get to talk to you :(');
-            return;
-        }
-    }
-    if (message.author.id == ('124329038008418307')&&message.content.toLowerCase().includes('vaporeon')){
-        if (message.content.toLowerCase().includes('vaporeon')){
-            message.channel.send('I dont respond to furry degenerates');
-            return;
-        }
-    }
-    if (message.author.id == ('184728156081487874')){
-       // message.channel.send('Hi dad!');
-    }
-    if (message.mentions.has(client.user)) {
-        console.log(`I see a mention!`);
-        message.channel.send(`Working on it!`);
-    }
-    if (message.content.toLowerCase().includes('vaporeon')){
-        message.channel.send('UwU')
-    }
-
+  
 });
 
